@@ -1,0 +1,103 @@
+body{
+    background-color:darkslategrey;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+img{
+    width: 100px;
+}
+
+
+#logb{
+    background-color: yellow;
+    color: black;
+    float: right;
+    padding: 7px;
+    border: none;
+    font-weight: bold;
+}
+
+#logb:hover{
+    background-color: green;
+}
+
+#help{
+    border: none;
+    border-radius: 1000px;
+    background-color: cadetblue;
+    padding: 2px 12px 2px 12px;
+    color: black;
+    margin-top: 20px;
+}
+
+#h{
+    border-style: dotted;
+    border-color: darkcyan;
+    margin-top: 10px;
+    padding: 10px;
+    width: 370px;
+    display: none;
+
+}
+
+.login-form{
+    background-color: ghostwhite;
+    border-style: solid;
+    border-color: rgb(7, 54, 7);
+    border-width: 1px 1px 1px 1px;
+    width: 400px;
+    height: 50x;
+    padding: 40px;
+    vertical-align: auto;
+    margin: 120px auto;
+    box-shadow: 1px 1px 5px 1px rgb(223, 237, 100);
+}
+
+
+
+@media (min-width:320px) and (max-width:480px){
+
+.login-form{
+    width: 250px;
+    height: 300px;
+    padding: 22px;
+    padding-bottom: 130px;
+    margin: 5px 5px  5px 5px;
+}
+
+#logb{
+    margin: 10px 0px 0px 55px;
+    float: none;
+}
+
+#help{
+    margin: 5px 0px 0px 15px;
+}
+
+form{
+    margin: 5px 5px 5px 5px;
+}
+
+.logo{
+    width: 65px;
+    margin: 0px 0px 0px 85px;
+    float: none;
+
+}
+
+#h{
+    border-style: dotted;
+    border-color: darkcyan;
+    background-color: blanchedalmond;
+    margin-top: 6px;
+    padding: 3px;
+    width: 240px;
+    font-size: 10px;
+    font-weight: bold;
+    display: none;
+    text-align:justify;
+
+}
+
+
+}

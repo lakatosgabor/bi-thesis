@@ -53,16 +53,21 @@ img{
     box-shadow: 1px 1px 5px 1px rgb(223, 237, 100);
 }
 
+.alert-danger{
+    background: rgb(247, 167, 167);
+}
 
 
-@media (min-width:320px) and (max-width:480px){
+
+@media (min-width:320px) and (max-width:359px){
 
 .login-form{
     width: 250px;
     height: 300px;
     padding: 22px;
     padding-bottom: 130px;
-    margin: 5px 5px  5px 5px;
+    margin: 0 auto;
+
 }
 
 #logb{
@@ -75,7 +80,7 @@ img{
 }
 
 form{
-    margin: 5px 5px 5px 5px;
+    margin: 0 auto;
 }
 
 .logo{
@@ -98,6 +103,96 @@ form{
     text-align:justify;
 
 }
-
-
 }
+
+@media (min-width:360px) and (max-width:400px){
+
+
+    .login-form{
+        width: 270px;
+        height: 320px;
+        padding: 30px;
+        padding-bottom: 130px;
+        margin: 0 auto;
+    }
+    
+    #logb{
+        margin: 10px 0px 0px 55px;
+        float: none;
+    }
+    
+    #help{
+        margin: 5px 0px 0px 15px;
+    }
+    
+    form{
+        margin: 0 auto;
+    }
+    
+    .logo{
+        width: 80px;
+        margin: 0px 0px 0px 100px;
+        float: none;
+    
+    }
+    
+    #h{
+        border-style: dotted;
+        border-color: darkcyan;
+        background-color: blanchedalmond;
+        margin-top: 6px;
+        padding: 3px;
+        width: 240px;
+        font-size: 10px;
+        font-weight: bold;
+        display: none;
+        text-align:justify;
+    
+    }
+    }
+@media (min-width: 401px) and (max-width:500px){
+
+    .login-form{
+        width: 320px;
+        height: 320px;
+        padding: 30px;
+        padding-bottom: 130px;
+        margin: 0 auto;
+    }
+    
+    #logb{        margin: 10px 0px 0px 50px;
+        float: none;
+    }
+    
+    #help{
+        margin: 5px 0px 0px 40px;
+    }
+    
+    form{
+        margin: 5px 5px 5px 35px;
+    }
+    
+    .logo{
+        width: 80px;
+        margin: 0px 0px 0px 120px;
+        float: none;
+    }
+
+    p{
+        margin: 5px 0px 0px 25px;
+
+    }
+
+    #h{
+        border-style: dotted;
+        border-color: darkcyan;
+        background-color: blanchedalmond;
+        margin: 0 auto;
+        margin-top: 6px;
+        padding: 3px;
+        width: 240px;
+        font-size: 12px;
+        font-weight: bold;
+        display: none;
+        text-align:justify;
+    }

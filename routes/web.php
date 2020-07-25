@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('/', 'MainController@index');
+Route::get('/main', 'MainController@index');
+Route::post('/main/checklogin', 'MainController@checklogin');
+Route::get('main/dashboard', 'MainController@successlogin');
+Route::get('main/logout', 'MainController@logout');
 

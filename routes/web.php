@@ -18,4 +18,6 @@ Route::get('/main', 'MainController@index');
 Route::post('/main/checklogin', 'MainController@checklogin');
 Route::get('main/dashboard', 'MainController@successlogin');
 Route::get('main/logout', 'MainController@logout');
+Route::get('dashboard','MenuController@dashboardmenu');
+Route::get('news','MenuController@newsmenu');
 

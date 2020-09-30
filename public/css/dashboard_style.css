@@ -9,17 +9,18 @@ body{
     position: fixed;
     top: 0px;
     left: 0px;
-    height: 100%;
-    width: 290px;
+    height: 55%;
+    width: 20%;
     background-color: darkslategrey;
     z-index: 1;
     overflow-x: hidden;
-    box-shadow: 4px 4px 10px 3px rgb(243, 243, 94);
+    box-shadow: 4px 4px 10px 3px cadetblue;  
     display: none;
+    border-radius: 0 20px 20px 20px;
 }
 
 span{
-    color: yellow;
+    color:cadetblue;  
     text-decoration: underline;
 }
 
@@ -33,9 +34,9 @@ span{
 }
 
 .sidemenu a:hover{
-    color: yellow;
+    color: white;
     background-color: darkcyan;
-    box-shadow: 4px 4px 1px 3px yellow;
+    box-shadow: 4px 4px 1px 3px cadetblue;  
     font-weight: bold;
 }
 
@@ -57,17 +58,21 @@ span{
  }
 
 #open{
-    background: yellow;
+    width: 5%;
+    background: cadetblue;  
     border: none;
     padding: 10px 10px;
     top: 0px;
     left: 0px;
     position: fixed;
     font-weight: bold;
+    color: white;
 }
 
 #close{
-    background: yellow;
+    width: 5%;
+    background: cadetblue;  
+    color: white;
     border: none;
     padding: 10px 10px 10px 10px;
     top: 0px;
@@ -77,28 +82,24 @@ span{
 }
 
 nav{
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 40px;
 }
 
 .logo{
-    width: 120px;
-    margin: 0px 0px 0px 40px;
-    position: block;
+    width: 30%;
+    float: right;
+    
 }
 
 .log-ikon{
-    padding: 5px 5px 5px 5px;
-    margin: 50px 20px 10px 20px;
-    position: block;
-    border-bottom: 5px;
-    border-bottom-style: solid;
-    border-top-style: solid;
-    border-color: white;
+    margin: 40px auto 5px auto;
+    padding: 0 auto;
+
 }
 
 strong{
-    color: yellow;
+    color: darkseagreen;
+    text-decoration: underline;
 }
 
 
@@ -115,17 +116,12 @@ strong{
     text-align: center;
 }
 
-
-.body-b{
-    margin-top: 50px;
-}
-
 .fej{
     background-color: white;
-    width: 600px;
+    width: 59.5%;
     height: 120px;
     padding: 5px;
-    margin: 0 auto;
+    margin: 60px auto 20px auto;
     border-style: solid;
     border-width: 1px;
     border-color: darkslategrey;
@@ -147,23 +143,28 @@ strong{
     font-size: 13px;
 }
 
+.body-b{
+    margin: 50px auto 0px auto; 
+
+}
+
 .sajat-feltoltesek{
     background-color: white;
-    width: 700px;
+    width: 60%;
     height: auto;
-    padding: 10px;
-    margin: 10px auto;
+    padding: 20px 1px 20px 1px;
+    margin: 10px auto 50px auto;
     border-style: solid;
     border-width: 1px;
     border-color: darkslategrey;
 }
 
 .sajat-feltoltesek td{
-    padding: 5px;
+    padding: 3px;
     border-style: solid;
     border-color: darkslategrey;
     border-width: 2px;
-    text-align: justify;
+
 }
 
 .sajat-feltoltesek th{
@@ -174,9 +175,15 @@ strong{
 
 }
 
+.sajat-feltoltesek tr:hover{
+    background-color: rgba(88, 226, 88, 0.479);
+}
+
+
 .sajat-feltoltesek table{
     margin: 0 auto;
-    width: 650px;
+    width: 99%;
+    text-align: justify;
 
 }
 
@@ -184,3 +191,94 @@ caption{
     margin: 0 auto;
     font-weight: bold;
 }
+
+.view{
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+}
+
+input{
+    background-color: aliceblue;
+    padding: 1px;
+    font-weight: bold;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.feltoltes{
+    background-color: white;
+    width: 60%;
+    height: auto;
+    padding: 20px 1px 20px 1px;
+    margin: 10px auto 10px auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkslategrey;
+}
+
+.feltoltes table{
+    margin: 5px auto 5px auto;
+    text-align: center;
+
+}
+
+.feltoltes td{
+    padding: 3px;
+    border-style: solid;
+    border-color: darkslategrey;
+    border-width: 2px;
+    background-color: aliceblue;
+}
+
+.feltoltes th{
+    padding: 5px;
+    background-color: darkslategrey;
+    color: white; 
+    font-weight: bold;
+}
+#submit{
+        margin: 2px 0px 0px 290px;
+        border: none;
+        border-radius: 100px 100px 100px 100px;
+        background-color: darkslategray;
+        color: white;
+        font-weight: bold;
+        font-size: 17px;
+        width: 140px;
+        height: 25px;
+        padding: 1px 1px 1px 1px; 
+}
+
+#button {
+    display: inline-block;
+    background-color: cadetblue;    
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 30px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s;
+    z-index: 1000;
+  }
+  #button:hover {
+    cursor: pointer;
+    background-color: #333;
+  }
+  #button:active {
+    background-color: #555;
+  }
+
+  #button::after {  
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+  }

@@ -9,17 +9,18 @@ body{
     position: fixed;
     top: 0px;
     left: 0px;
-    height: 100%;
-    width: 290px;
+    height: 55%;
+    width: 20%;
     background-color: darkslategrey;
     z-index: 1;
     overflow-x: hidden;
-    box-shadow: 4px 4px 10px 3px rgb(243, 243, 94);
+    box-shadow: 4px 4px 10px 3px cadetblue;  
     display: none;
+    border-radius: 0 20px 20px 20px;
 }
 
 span{
-    color: yellow;
+    color: cadetblue;  
     text-decoration: underline;
 }
 
@@ -33,9 +34,9 @@ span{
 }
 
 .sidemenu a:hover{
-    color: yellow;
+    color: white;
     background-color: darkcyan;
-    box-shadow: 4px 4px 1px 3px yellow;
+    box-shadow: 4px 4px 1px 3px cadetblue;  
     font-weight: bold;
 }
 
@@ -56,18 +57,22 @@ span{
     padding: 0px 10px 0px 0px;
  }
 
-#open{
-    background: yellow;
+ #open{
+    width: 5%;
+    background: cadetblue;  
     border: none;
     padding: 10px 10px;
     top: 0px;
     left: 0px;
     position: fixed;
     font-weight: bold;
+    color: white;
 }
 
 #close{
-    background: yellow;
+    width: 5%;
+    background: cadetblue;  
+    color: white;
     border: none;
     padding: 10px 10px 10px 10px;
     top: 0px;
@@ -77,28 +82,23 @@ span{
 }
 
 nav{
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 40px;
 }
 
 .logo{
-    width: 120px;
-    margin: 0px 0px 0px 40px;
-    position: block;
+    width: 30%;
+    float: right;   
 }
 
 .log-ikon{
-    padding: 5px 5px 5px 5px;
-    margin: 50px 20px 10px 20px;
-    position: block;
-    border-bottom: 5px;
-    border-bottom-style: solid;
-    border-top-style: solid;
-    border-color: white;
+    margin: 40px auto 5px auto;
+    padding: 0 auto;
+
 }
 
 strong{
-    color: yellow;
+    color: darkseagreen;
+    text-decoration: underline;
 }
 
 
@@ -120,7 +120,7 @@ strong{
     margin-top: 50px;
 }
 
-.sajat-feltoltesek{
+.uzenetkuldes{
     background-color: white;
     width: 700px;
     height: auto;
@@ -131,7 +131,7 @@ strong{
     border-color: darkslategrey;
 }
 
-.sajat-feltoltesek td{
+.uzenetkuldes td{
     padding: 5px;
     border-style: solid;
     border-color: darkslategrey;
@@ -139,7 +139,7 @@ strong{
     text-align: justify;
 }
 
-.sajat-feltoltesek th{
+.uzenetkuldes th{
     padding: 5px;
     background-color: darkslategrey;
     color: white; 
@@ -147,13 +147,42 @@ strong{
 
 }
 
-.sajat-feltoltesek table{
+.uzenetkuldes table{
     margin: 0 auto;
     width: 650px;
+    font-size: 13px;
+    font-weight: bold;
+    color: darkslategray;
 
 }
 
 caption{
     margin: 0 auto;
     font-weight: bold;
-}  
+} 
+
+#msg{
+    width: 650px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px auto;
+    border: none;
+}
+
+#submit{
+    margin: 5px auto;
+    border: none;
+    border-radius: 100px 100px 100px 100px;
+    background-color: darkslategray;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    width: 180px;
+    height: 25px;
+    padding: 1px 1px 1px 1px; 
+}
+#msg:hover{
+    box-shadow: 3px 3px 8px 1px gray;
+    padding: 5px;   
+}

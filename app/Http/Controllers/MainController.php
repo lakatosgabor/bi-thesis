@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
+use App\Documents;
 
 class MainController extends Controller
 {
+
+    
     function index(){
         return view('login');
     }  
@@ -21,10 +24,17 @@ class MainController extends Controller
         $user_data = array(
             'email'        =>  $request->get('email'),
             'password'     =>  $request->get('password'),
+            
         );
 
         if (Auth::attempt($user_data)){
-            return redirect('main/dashboard');
+            if(Auth::user()->usertype == 'oktato'){
+                return redirect('tutorial');
+            }
+            else{
+                return redirect('main/dashboard');
+            }
+            
 
         }
         else{
@@ -34,7 +44,8 @@ class MainController extends Controller
     }
 
     function successlogin(){
-        return view('dashboard');
+        $file=Documents::all();
+        return view('dashboard', compact('file'));
     }
 
     function logout(){
@@ -47,3 +58,5 @@ class MainController extends Controller
 
 
 }
+
+

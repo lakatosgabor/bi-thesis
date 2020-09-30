@@ -16,12 +16,21 @@ class UsersTablesSeeder extends Seeder
         //
         User::create([
             'neptun'         =>  'UDBOC3',
+            'usertype'       =>  'oktato',
             'name'           =>  'Lakatos Gábor',
             'email'          =>  'lakatos.gabor998@gmail.com',
-            'password'       =>   Hash::make('password'),
-            'remember_token' =>   Str::random(10),
-                    
-            
+            'password'       =>   Hash::make('oktato'),
+            'remember_token' =>   Str::random(10),   
+        ]);
+
+
+        User::create([
+            'neptun'         =>  'ABEOA2',
+            'usertype'       =>  'hallgato',
+            'name'           =>  'Teszt Elek',
+            'email'          =>  'elek@gmail.com',
+            'password'       =>   Hash::make('hallgato'),
+            'remember_token' =>   Str::random(10),   
         ]);
     }
 }

@@ -9,15 +9,16 @@
 </head>
 <body>
     <div class="login-form">
-        <img class="logo" src="{{asset('fotos/ik-logo.png')}}"><br><p stlye="text-align: center"><b><u>HALLGATÓI BEJELENTKEZÉS</u></b></p><br>
-        
+    <table>
+        <tr>
+            <td><img class="logo" src="{{asset('fotos/ik-logo.png')}}"><br><p>HALLGATÓI BEJELENTKEZÉS</p><br></td>
+        </tr>
         @if (isset(Auth::user()->email))
             <script>window.location="/main/dashboard"</script>
         @endif
         
         @if ($message = Session::get('error'))
             <div class="alert-danger">
-                <button type="button" class="close" data-dismiss="alert">x</button>
                 <strong>{{ $message }}</strong>
             </div>
         @endif
@@ -31,19 +32,38 @@
                 </ul>
             </div>
         @endif
-
+        
+    
+        
         <form method="post" action="{{ url('/main/checklogin' )}}">
             {{csrf_field() }}
-            <img style=" width: 13px" src="{{asset('fotos/fh-ikon.png')}}"><label> Email</label><br>
-            <input type="text" name="email" placeholder="email"><br><br>
-            <img style=" width: 20px" src="{{asset('fotos/pw-ikon.png')}}"><label>Jelszó</label><br>
-            <input type="password" name="password" placeholder="A kapott jelszó">
-            <button id="logb" name="login" type="submit"><img style=" width: 15px" src="{{asset('fotos/log-ikon.png')}}">  Bejelentkezés</button><br>
+            <tr>
+                <td>
+                    
+                <input type="text" name="email" placeholder="Email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <input type="password" name="password" placeholder="A kapott jelszó">
+                </td>
+            </tr>
+            <tr>    
+                <td>
+                    <br>
+                    <button id="logb" name="login" type="submit"><img style=" width: 15px" src="{{asset('fotos/log-ikon.png')}}">  Bejelentkezés</button><br>
+                </td>
+            </tr>
         </form>
         <br>
-        <button id="help" name="help" type="button">Segítség a bejelentkezéshez!</button>
-        <div id="h">Bejelentkezni hallgató saját email címével, és az oktatója álltal megadott jelszóval lehetséges.<br> Jelszót igényelni a godo.zoltan@inf.unideb.hu email címen lehet.</div>
-        <script>$('#help').click(function(){$('#h').toggle();});</script>
+        <tr>
+            <td>
+                <button id="help" name="help" type="button">Segítség a bejelentkezéshez!</button>
+                <div id="h">Bejelentkezni, a hallgató saját email címével, és az oktatója álltal megadott jelszóval lehetséges.<br> Jelszót igényelni a godo.zoltan@inf.unideb.hu email címen lehet.</div>
+                <script>$('#help').click(function(){$('#h').toggle();});</script>
+            </td>
+        </tr>
+        </table>
     </div>
 </body>
 </html>

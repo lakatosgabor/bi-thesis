@@ -27,38 +27,34 @@
             <strong> Belépve: {{Auth::user()->name }}</strong>
             <br>       
         </div>
-            <nav>
-                <a href="{{url('/admin/tutorial')}}">Profil</a>
-                <a href="{{url('/admin/news')}}">Üzenőfal</a>
-                <a href="{{url('/admin/course')}}">Kurzusok</a>
-                <a href="{{url('/admin/chat')}}">Chat</a>
-                <a href="{{url('/admin/editstudents')}}">Hallgatók</a>
-                <a href="{{url('/admin/asks')}}">Kézikönyv</a>
-                <a href="{{url('/main/logout')}}">Kijelentkezés</a>
-            </nav>
-    </div>
-    <div class="body-b">
-        <div class="uzenetkuldes">
-            <form action="">
-                <table>
-                    <caption>ÜZENET BEKÜLDÉS</caption>
-                <tr>
-                    <td>
-                        <input id="msg" type="textarea" name="uzenet" placeholder="Üzenet írása...">
-                        Fénykép csatolása: <input type="file">
-                        <input id="submit" type="submit" value="Küldés">
-                    </td>
-                </tr>
-    </table>
-
-
-
-    </form>
-    
-    </div>
-
-
-    </div>
+        <nav>
+            <a href="{{url('/admin/tutorial')}}">Profil</a>
+            <a href="{{url('/admin/news')}}">Üzenőfal</a>
+            <a href="{{url('/admin/course')}}">Kurzusok</a>
+            <a href="{{url('/admin/chat')}}">Chat</a>
+            <a href="{{url('/admin/editstudents')}}">Hallgatók</a>
+            <a href="{{url('/admin/asks')}}">Kézikönyv</a>
+            <a href="{{url('/main/logout')}}">Kijelentkezés</a>
+        </nav>
+    </div>      
+        <form action="{{ route('addpost') }}" method="POST" enctype="multipart/form-data">
+           {{csrf_field() }}
+            <input type="text" name="name" value="{{Auth::user()->name }}" hidden>
+            <input id="msg" type="textarea" name="post" placeholder="Bejegyzés írása..."><br><br>
+            Fénykép csatolása: <input type="file" name="image"><br><br>
+            <input id="logb" type="submit" value="Megosztás">
+        </form>
+        @foreach ($news as $new)
+            <div class="card_inner1">          
+                <div class="post">
+                    <a href="{{ asset('uploads/images/'.$new->image)}}"><img class="post_img" src="{{ asset('uploads/images/'.$new->image)}}" alt="Image"></a>
+                    <b><u>{{$new->name}}</u></b><br>
+                    {{$new->created_at}}<br><br> 
+                    {{$new->post}}
+                </div>
+                            
+            </div> 
+        @endforeach
 
     <script>$('#close').click(function(){$('#menu').toggle();});</script>
     <script>$('#open').click(function(){$('#menu').toggle();});</script>

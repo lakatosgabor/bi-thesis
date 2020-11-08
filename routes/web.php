@@ -31,6 +31,8 @@ Route::get('asks','MenuController@asksmenu');
 Route::post('/news', 'NewsController@store')->name('addpost');
 Route::post('/admin/editstudents', 'MainController@store')->name('adduser');
 
+Route::post('admin/news', 'NewsController@adminstore')->name('addpost');
+
 
 
 
@@ -63,7 +65,8 @@ Route::group(['middleware' => ['auth', 'oktato']], function() {
 
 Route::group(['middleware' => ['auth', 'oktato']], function() {
     Route::get('/admin/news', function(){
-        return view('admin.anews');
+        $news = News::orderBy('created_at', 'desc')->get();
+        return view('admin.anews')->with('news', $news);
     });
 
 });

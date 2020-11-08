@@ -46,8 +46,8 @@
         @foreach ($news as $new)
             <div class="card_inner1">          
                 <div class="post">
-                    <a class="post_img" href="{{ asset('uploads/images/'.$new->image)}}"><img src="{{ asset('uploads/images/'.$new->image)}}" alt="Image" width="200px" height="200px"></a>
-                    {{$new->name}}<br>
+                    <a href="{{ asset('uploads/images/'.$new->image)}}"><img class="post_img" src="{{ asset('uploads/images/'.$new->image)}}" alt="Image"></a>
+                    <b><u>{{$new->name}}</u></b><br>
                     {{$new->created_at}}<br><br> 
                     {{$new->post}}
                 </div>

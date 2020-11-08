@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Validator;
 use Auth;
 use App\Documents;
+use App\News;
+use App\Users;
 
 class MenuController extends Controller{
 
@@ -15,11 +17,13 @@ class MenuController extends Controller{
     }
 
     function newsmenu(){
-        return view('news');
+        $news = News::orderBy('created_at', 'desc')->get();
+
+        return view('news')->with('news', $news);
     }
 
-    function tasksmenu(){
-        return view('tasks');
+    function coursemenu(){
+        return view('course');
     }
 
     function chatmenu(){
@@ -28,6 +32,16 @@ class MenuController extends Controller{
 
     function warningmenu(){
         return view('warning');
+    }
+
+    function asksmenu(){
+        return view('asks');
+    }
+
+    function editmenu(){
+        $users = Users::orderBy('name', 'asc')->get();
+
+        return view('/admin/editstudents')->with('users', $users);
     }
 
 }

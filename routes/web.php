@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\News;
+use App\Users;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,24 +23,56 @@ Route::get('/tutorial', 'MainController@successlogin');
 Route::get('main/logout', 'MainController@logout');
 Route::get('dashboard','MenuController@dashboardmenu');
 Route::get('news','MenuController@newsmenu');
-//Route::get('tasks','MenuController@tasksmenu');
+Route::get('course','MenuController@coursemenu');
 Route::get('chat','MenuController@chatmenu');
 Route::get('warning','MenuController@warningmenu');
+Route::get('asks','MenuController@asksmenu');
+
+Route::post('/news', 'NewsController@store')->name('addpost');
+Route::post('/admin/editstudents', 'MainController@store')->name('adduser');
+
+
+
 
 Route::group(['middleware' => ['auth', 'oktato']], function() {
-    Route::get('/tutorial', function(){
+    Route::get('/admin/editstudents', function(){
+        $users = Users::orderBy('name', 'asc')->get();
+        return view('/admin.editstudents')->with('users', $users);
+    });
+});
+
+
+
+Route::group(['middleware' => ['auth', 'oktato']], function() {
+    Route::get('/admin/tutorial', function(){
         return view('admin.tutorial');
+    });
+});
+
+Route::group(['middleware' => ['auth', 'oktato']], function() {
+    Route::get('/admin/chat', function(){
+        return view('admin.achat');
+    });
+});
+
+Route::group(['middleware' => ['auth', 'oktato']], function() {
+    Route::get('/admin/course', function(){
+        return view('admin.acourse');
+    });
+});
+
+Route::group(['middleware' => ['auth', 'oktato']], function() {
+    Route::get('/admin/news', function(){
+        return view('admin.anews');
     });
 
 });
 
 
-Route::get('tasks', 'DocumentController@index');
-Route::post('/files', 'DocumentController@store');
-Route::get('/files', 'DocumentController@index');
 
-Route::get('files/{id}', 'DocumentController@show');
+Route::group(['middleware' => ['auth', 'oktato']], function() {
+    Route::get('/admin/asks', function(){
+        return view('admin.aasks');
+    });
 
-
-
-Route::get('teszt', 'MenuController@tesztmenu');
+});

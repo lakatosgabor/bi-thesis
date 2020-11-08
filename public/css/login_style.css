@@ -15,6 +15,7 @@ img{
     padding: 7px;
     border: none;
     font-weight: bold;
+    
 }
 
 #logb:hover{
@@ -56,6 +57,7 @@ p{
     vertical-align: auto;
     margin: 50px auto 60px auto;
     box-shadow: 1px 1px 5px 1px cadetblue;
+    border-radius: 5%;
 }
 
 .alert-danger{

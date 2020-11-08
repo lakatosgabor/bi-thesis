@@ -30,38 +30,31 @@
             <nav>
                 <a href="{{url('dashboard')}}">Profil</a>
                 <a href="{{url('news')}}">Üzenőfal</a>
-                <a href="{{url('tasks')}}">Feladatok</a>
+                <a href="{{url('course')}}">Kurzusok</a>
                 <a href="{{url('chat')}}">Chat</a>
+                <a href="{{url('asks')}}">Kézikönyv</a>
                 <a href="{{url('/main/logout')}}">Kijelentkezés</a>
             </nav>
-    </div>
-    <div class="body-b">
-        <div class="uzenetkuldes">
-            <form action="">
-                <table>
-                    <caption>ÜZENET BEKÜLDÉS</caption>
-                <tr>
-                    <td>
-                        <input id="msg" type="textarea" name="uzenet" placeholder="Üzenet írása...">
-                        Fénykép csatolása: <input type="file">
-                        <input id="submit" type="submit" value="Küldés">
-                    </td>
-                </tr>
-    </table>
+    </div>      
+        <form action="{{ route('addpost') }}" method="POST" enctype="multipart/form-data">
+           {{csrf_field() }}
+            <input type="text" name="name" value="{{Auth::user()->name }}" hidden>
+            <input id="msg" type="textarea" name="post" placeholder="Bejegyzés írása..."><br><br>
+            Fénykép csatolása: <input type="file" name="image"><br><br>
+            <input id="logb" type="submit" value="Megosztás">
+        </form>
+        @foreach ($news as $new)
+            <div class="card_inner1">          
+                <div class="post">
+                    <a class="post_img" href="{{ asset('uploads/images/'.$new->image)}}"><img src="{{ asset('uploads/images/'.$new->image)}}" alt="Image" width="200px" height="200px"></a>
+                    {{$new->name}}<br>
+                    {{$new->created_at}}<br><br> 
+                    {{$new->post}}
+                </div>
+                            
+            </div> 
+        @endforeach
 
-
-
-    </form>
-    
-    </div>
-
-
-    </div>
-
-    <div class="footer">
-        <p>Készítette: Lakatos Gábor</p>
-    </div>
-    
     <script>$('#close').click(function(){$('#menu').toggle();});</script>
     <script>$('#open').click(function(){$('#menu').toggle();});</script>
 

@@ -11,7 +11,7 @@
     <div class="login-form">
     <table>
         <tr>
-            <td><img class="logo" src="{{asset('fotos/ik-logo.png')}}"><br><p>HALLGATÓI BEJELENTKEZÉS</p><br></td>
+            <td><img class="logo" src="{{asset('fotos/ik-logo.png')}}"><br><p>BEJELENTKEZÉS</p><br></td>
         </tr>
         @if (isset(Auth::user()->email))
             <script>window.location="/main/dashboard"</script>

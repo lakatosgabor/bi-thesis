@@ -37,6 +37,8 @@
                 <a href="{{url('/main/logout')}}">Kijelentkezés</a>
             </nav>
         </div>
+        <div class="body-b">              
+            </div>
             <div class="sajat-feltoltesek">
             <div class="main__title">
                     <img src="{{asset('fotos/hello.svg')}}" alt="Hello User">
@@ -76,7 +78,6 @@
                             </div>
 
             </div>
-
 
         <script>$('#close').click(function(){$('#menu').toggle();});</script>
         <script>$('#open').click(function(){$('#menu').toggle();});</script>

@@ -121,19 +121,15 @@ strong{
     font-size: 25px;
 }
 
-
-.foot_title{
-    text-align: center;
-    color: white;
-    font-size: 12px;
-    padding: 0px 10px 0px 0px;
+h1{
+    font-size: 22px;
+    color: #2e4a66;
 }
 
-p{
-    color: #333;
-    text-align: justify;
-    font-weight: 700;
-    padding: 3px;
+.profil-ikon{
+    width: 110px;
+    margin: 0px 0px 0px 40px;
+    position: block;
 }
 
 
@@ -144,37 +140,16 @@ p{
     margin: 60px auto 50px auto;
 }
 
-.main__title{
-    border-bottom: solid;
-    border-color:lightblue;
-    margin-bottom: 30px;
-}
 
-#addpost{
-    width: 400px;
-    background: cadetblue;  
-    border: none;
-    padding: 8px 8px;
+caption{
+    margin: 0 auto;
     font-weight: bold;
-    color: white;
-    float: center;
 }
 
-
-.card_inner1{
-    float: right;
-    height: 200px;
-    width: 600px;
-    padding: 40px;
-    margin-bottom: 1%;
-    text-align: justify;
-} 
-
-#msg{
-    border-color: #2e4a66;
-    padding: 5px;
-    height: 100px;
-    width: 400px;  
+.view{
+    width: 20px;
+    height: 20px;
+    padding: 2px;
 }
 
 #logb{
@@ -184,47 +159,79 @@ p{
     padding: 7px;
     border: none;
     font-weight: bold;
-    width: 400px;   
-}
-
-form{
-    float: left;
-    width: 500px;
-    margin: 40px auto 5px auto;
-    background: white;  
-    box-shadow: 5px 5px 10px #c5c2c2, -5px -5px 10px #ffffff;
-    text-align: center;
-    padding: 3px;
-}
-
-
-.post{
-    border-bottom: solid;
-    padding-bottom: 5px;
-    background: white;
-    padding: 15px;
     
-
 }
 
-.post_img{
+input{
+    border-color: #2e4a66;
+    padding: 5px;
+    margin: 2px;
+}
+
+.main__title{
+    border-bottom: solid;
+    border-color:lightblue;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.new_course{
+    width: 240px;
+    background: cadetblue;  
+    border: none;
+    padding: 5px 5px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.text-lightblue{
+    color: #469cac;
+}
+
+.text-red{
+    color: #cc3d38;    
+}
+
+.text-yellow{
+    color: #a98921;
+}
+
+.text-green{
+    color: #3b9668;
+}
+
+
+.card_inner1{
     float: left;
-    margin: 10px;
-}
+    height: 100px;
+    width: 210px;
+    padding: 30px;
+    background: #ffffff;
+    box-shadow: 5px 5px 10px #c5c2c2, -5px -5px 10px #ffffff;
+    margin: 6px 3px 6px 20px;
+    text-align: center;
+} 
 
  
 
 
-@media (max-width:800px){
+@media (max-width:800px)    {
+    .sajat-feltoltesek{
+        width: 100%;
+        height: 880px;
+        padding: 20px 1px 20px 1px;
+        margin: 60px auto 200px auto;
+    }
 
     .card_inner1{
-        height: 300px;
-        width: 350px;;
-        padding: 40px;
+        height: 90px;
+        width: 220px;;
+        padding: 30px;
         background: #ffffff;
         box-shadow: 5px 5px 10px rgb(190, 188, 188), -5px -5px 10px #ffffff;
         text-align: center;
-        margin: 10px 25px 10px 45px;
+        margin: 10px 25px 10px 20px;
     }
 
      
@@ -239,12 +246,12 @@ form{
 
     .card_inner1{
         height: 70px;
-        width: 180px;;
+        width: 220px;;
         padding: 40px;
         background: #ffffff;
         box-shadow: 5px 5px 10px rgb(190, 188, 188), -5px -5px 10px #ffffff;
         text-align: center;
-        margin: 10px 25px 10px 45px;
+        margin: 10px 25px 10px 20px;
     }
 
 
@@ -260,12 +267,12 @@ form{
 
     .card_inner1{
         height: 70px;
-        width: 300px;;
+        width: 220px;;
         padding: 40px;
         background: #ffffff;
         box-shadow: 5px 5px 10px rgb(190, 188, 188), -5px -5px 10px #ffffff;
         text-align: center;
-        margin: 10px 25px 10px 45px;
+        margin: 10px 25px 10px 20px;
     }
    
 } 
@@ -280,20 +287,12 @@ form{
 
     .card_inner1{
         height: 70px;
-        width: 350px;
+        width: 220px;;
         padding: 40px;
         background: #ffffff;
         box-shadow: 5px 5px 10px rgb(190, 188, 188), -5px -5px 10px #ffffff;
         text-align: center;
-        float: none;
-    }
-
-    form{
-        width: 100%; 
-        background: white;  
-        box-shadow: 5px 5px 10px #c5c2c2, -5px -5px 10px #ffffff;
-        text-align: center;
-        padding: 3px;
+        margin: 10px 50px 10px 0px;
     }
 
 }

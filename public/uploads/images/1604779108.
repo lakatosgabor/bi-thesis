@@ -1,0 +1,86 @@
+HOLNAP:
+	ÜZENŐFAL:
+	Felület kialakítás.
+	Adazbáizs.
+https://www.youtube.com/watch?v=il9gsKH9V-8
+
+
+PÉNTEK:
+	HALLGATÓK:
+	Hallgató hozzáadása adatbázisba.
+	A hallgató megjelenítése ABC sorrendben.
+
+
+SZOMBAT:
+	HALLGATÓI PROFIL:
+	Jelszó módostás.
+	CHAT:
+	Felület kialakítás.
+	Adazbáizs.
+
+SZOBMAT:
+	KURZUS:
+	A tanár feladatot tölt fel. newcourse oldal összerakása.
+	A feltöltött kurzus megjelenítése a tanárnak, és szerkesztési lehetőség.
+	A feltöltött kurzus megjelenítése a diákoknak.
+
+#addpost{
+    width: 400px;
+    background: cadetblue;  
+    border: none;
+    padding: 8px 8px;
+    font-weight: bold;
+    color: white;
+    float: center;
+}
+
+
+.card_inner1{
+    float: right;
+    height: 200px;
+    width: 600px;
+    padding: 40px;
+    margin-bottom: 100px;
+    text-align: justify;
+
+} 
+
+#msg{
+    border-color: #2e4a66;
+    padding: 5px;
+    height: 100px;
+    width: 400px;  
+}
+
+#logb{
+    background-color: cadetblue;  
+    color: white;
+    float: center;
+    padding: 7px;
+    border: none;
+    font-weight: bold;
+    width: 400px;   
+}
+
+form{
+    float: left;
+    width: 500px;
+    margin: 30px auto 20px auto;
+    background: white;  
+    box-shadow: 5px 5px 10px #c5c2c2, -5px -5px 10px #ffffff;
+    text-align: center;
+    padding: 3px;
+}
+
+
+.post{
+    border-bottom: solid;
+    padding-bottom: 20px;
+    background: white;
+
+}
+
+.post_img{
+    float: left;
+    margin: 10px;
+}

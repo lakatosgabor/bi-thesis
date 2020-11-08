@@ -7,7 +7,7 @@
     <script type="text/javascript" src="{{ asset('js/jquery.js')}}"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-    <title>Hallgatói profil</title>
+    <title>Oktatói profil</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
             <div class="header-p">
                 Debreceni Egyetem Informatika Kar
                 <br>
-                <span>Hallgatói profil</span>
+                <span>Oktatói profil</span>
             </div>
         </div>
         <div id="menu" class="sidemenu">
@@ -29,14 +29,16 @@
                 <br>
             </div>
             <nav>
-                <a href="{{url('dashboard')}}">Profil</a>
-                <a href="{{url('news')}}">Üzenőfal</a>
-                <a href="{{url('course')}}">Kurzusok</a>
-                <a href="{{url('chat')}}">Chat</a>
-                <a href="{{url('asks')}}">Kézikönyv</a>
+                <a href="{{url('/admin/tutorial')}}">Profil</a>
+                <a href="{{url('/admin/news')}}">Üzenőfal</a>
+                <a href="{{url('/admin/course')}}">Kurzusok</a>
+                <a href="{{url('/admin/chat')}}">Chat</a>
+                <a href="{{url('/admin/editstudents')}}">Hallgatók</a>
+                <a href="{{url('/admin/asks')}}">Kézikönyv</a>
                 <a href="{{url('/main/logout')}}">Kijelentkezés</a>
             </nav>
         </div>
+
             <div class="sajat-feltoltesek">
             <div class="main__title">
                     <img src="{{asset('fotos/hello.svg')}}" alt="Hello User">
@@ -44,12 +46,8 @@
                         <h1>Hello {{Auth::user()->name }}</h1>
                         <p>Üdv az Elearning rendszerben.</p>
                         <a class="fa fa-sign-out" aria-hidden="true" href="{{url('/main/logout')}}" style="color: red;  text-decoration: none;">Kijelentkezés</a>
-                        <form method="post" action="{{ url('/newpassword' )}}">
-                            {{csrf_field() }}  
-                            Jelszó módosítása: <input type="text" name="password" placeholder="Új jelszó">
-                            <button id="logb" name="add" type="submit">Módosít</button><br>
-                        </form>
                     </div>
+                   
                 </div>
                         <div class="card_inner1">
                             <i class="fa fa-user-o fa-2x text-lightblue"></i>
@@ -60,7 +58,7 @@
                             <div class="card_inner4">
                                 <i class="fa fa-user-secret fa-2x text-green"></i>
                                 <p class="text-primary-p">Jogosúltság</p>
-                                <span class="font-bold text-title">Hallgatói</span>
+                                <span class="font-bold text-title">Oktatói</span>
                             </div>
 
                         <div class="card_inner3">
@@ -76,7 +74,6 @@
                             </div>
 
             </div>
-
 
         <script>$('#close').click(function(){$('#menu').toggle();});</script>
         <script>$('#open').click(function(){$('#menu').toggle();});</script>

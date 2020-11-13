@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <form action="{{ route('addtask') }}" method="POST" enctype="multipart/form-data" >
+    <form action="" method="POST" enctype="multipart/form-data" >
     {{csrf_field() }}
         
         Feladat: <input type="text" name="task">

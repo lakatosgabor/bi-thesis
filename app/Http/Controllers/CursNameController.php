@@ -52,31 +52,7 @@ class CursNameController extends Controller
 
     public function addtask(Request $request){
 
-        
-
-        $model_name = 'NewCourse';          
-        Artisan::call('make:model',['name'=>$model_name]);
-
-        $task = new NewCourse();
-        if ($request->input('task')){
-            $task->text = $request->input('task');
-            $file = $request->file('file');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('uploads/tasks', $filename);
-            $task->file = $filename;
-
-
-            $task->save();
-            $task = CursName::orderBy('id', 'asc')->get();   
-
-        }
-        else {
-            echo "Hiba";
-        }
-
-
-
+        return view('admin.aeditcours');
         
     }
 }

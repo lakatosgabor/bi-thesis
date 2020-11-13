@@ -8,6 +8,7 @@ use Auth;
 use App\Documents;
 use App\News;
 use App\Users;
+use App\Chat;
 
 class MenuController extends Controller{
 
@@ -18,7 +19,6 @@ class MenuController extends Controller{
 
     function newsmenu(){
         $news = News::orderBy('created_at', 'desc')->get();
-
         return view('news')->with('news', $news);
     }
 
@@ -27,7 +27,8 @@ class MenuController extends Controller{
     }
 
     function chatmenu(){
-        return view('chat');
+        $msg = Chat::orderBy('created_at', 'asc')->get();
+        return view('chat')->with('msg', $msg); 
     }
 
     function warningmenu(){

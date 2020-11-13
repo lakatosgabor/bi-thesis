@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
     protected $table = 'news';
-    protected $fillabe = ['name', 'post', 'image'];
+    protected $fillabe = ['name', 'post'];
 
 }

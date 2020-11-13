@@ -33,7 +33,7 @@ Route::post('/admin/editstudents', 'MainController@store')->name('adduser');
 
 Route::post('admin/news', 'NewsController@adminstore')->name('addpost');
 
-
+Route::post('/chat', 'ChatController@store')->name('addchat');
 
 
 Route::group(['middleware' => ['auth', 'oktato']], function() {

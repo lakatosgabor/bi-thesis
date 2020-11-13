@@ -2,15 +2,13 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/chat_style.css')}}">
-    <script type="text/javascript" src="{{ asset('js/jquery.js')}}"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+    <script type="text/javascript" src="{{ asset('js/jquery.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <title>Chat</title>
 </head>
 <body>
-
     @if(isset(Auth::user()->email))
         <div class="header">
             <button id="open" name="open" type="button">Menü</button>
@@ -40,22 +38,19 @@
             <div class="sajat-feltoltesek">
                 <div class="main__title">
                         <div class="message_box">
-                            <p>Üzenet</p>
-                            <p>Üzenet</p>
-                            <p>Üzenet</p>
-                            <p>Üzenet</p>
-                            <p>Üzenet</p>
-                            <p>Üzenet</p>
-                            <p>Üzenet</p>
-                            <p>Üzenet</p>
-                            <p>Üzenet</p>
-                            <p>Üzenet</p>
-                            <p>Üzenet</p><p>Üzenet</p><p>Üzenet</p><p>Üzenet</p><p>Üzenet</p><p>Üzenet</p><p>Üzenet</p><p>Üzenet</p><p>Üzenet</p><p>Üzenet</p>  
+                            @foreach($msg as $m)
+                            <p><span>{{$m->name}}: </span>{{$m->message}}</p>
+                            @endforeach
                         </div>
-                        <form action="">
-                            <input type="text" placeholder="Üzenet.." id="message">    
-                            <input type="submit" name="submit" id="send">
+
+                        <form action="{{ route('addchat') }}" method="POST">
+                        {{csrf_field() }}
+                                <input type="text" placeholder="Üzenet.." name="message" id="message" autocomplete="off" autofocus >    
+                                <input type="text" name="name" value="{{Auth::user()->name }}" hidden > 
+                                <input type="submit" name="submit" id="send">
+
                         </form>
+
                 </div>
 
             </div>

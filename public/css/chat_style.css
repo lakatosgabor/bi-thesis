@@ -3,6 +3,7 @@ body{
     background-color: azure;
     color: black;
     margin: 20px 40px;
+    overflow: hidden;
 }
 
 .sidemenu{
@@ -21,7 +22,6 @@ body{
 
 span{
     color:cadetblue;  
-    text-decoration: underline;
 }
 
 .sidemenu a{
@@ -135,16 +135,19 @@ h1{
 }
 
 p{
-    color: white;
+    color: #2e4a66;
+    border: solid;
+    border-width: 2px;
+    width: 880px;
+    height: 50px;
     text-align: justify;
     font-weight: 700;
     padding: 3px;
-    background-color: darkslategrey;
     z-index: 1;
-    overflow-x: hidden;
-    box-shadow: 4px 4px 10px 3px cadetblue;  
+    overflow-x: hidden; 
     border-radius: 0 20px 20px 20px;
 }
+
 .profil-ikon{
     width: 110px;
     margin: 0px 0px 0px 40px;
@@ -172,22 +175,59 @@ caption{
     padding: 2px;
 }
 
-#message{
-    background-color: #469cac;
-    padding: 5px;
+input{
+    appearance: none;
+    --webkit--appearance: none;
+
+}
+
+form{
+    display: flex;
+    background: #2e4a66;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-weight: bold;
     border: none;
-    width: 100%;
+    width: 925px;
+    height: 60px;
+    margin: 0 auto;
+    border-radius: 0px 0px 30px 30px;
+}
+
+#message{
+    flex: 2;
+    width: 730px;
     height: 40px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 25px;
+}
+
+#send{
+    border: none;
+    width: 100px;
+    height: 50px;
+    margin-left: 10px;
     border-radius: 10px;
 }
 
+
 .message_box{
-    background: #333;
-    height: 400px;
+    height: 450px;
+    width: 900px;
+    overflow-x: hidden;
+    border: solid;
+    border-color:cadetblue;
+    border-width: 1px;
     padding: 10px;
+    z-index: 1;
+    overflow-x: hidden;
+    margin: 0 auto;
+    background: white;
 
 }
+
 .main__title{
     margin: 0 auto;
 }

@@ -50,9 +50,4 @@ class CursNameController extends Controller
         
     }
 
-    public function addtask(Request $request){
-
-        return view('admin.aeditcours');
-        
-    }
 }

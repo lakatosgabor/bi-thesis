@@ -31,13 +31,7 @@ Route::get('course','MenuController@coursemenu');
 Route::get('chat','MenuController@chatmenu');
 Route::get('warning','MenuController@warningmenu');
 Route::get('asks','MenuController@asksmenu');
-Route::get('/admin/editcourse','MenuController@aeditcoursmenu');
-
-
 Route::post('/news', 'NewsController@store')->name('addpost');
-Route::post('/admin/editstudents', 'MainController@store')->name('adduser');
-Route::post('/admin/course', 'CursNameController@store')->name('addcursname');
-Route::post('admin/news', 'NewsController@adminstore')->name('addpost');
 Route::post('/chat', 'ChatController@store')->name('addchat');
 
 
@@ -45,7 +39,11 @@ Route::post('/chat', 'ChatController@store')->name('addchat');
 
 Route::group(['middleware' => ['auth', 'oktato']], function() {
     Route::get('/admin/course/{id}', 'CursNameController@show');
-    Route::get('/admin/course/{id}', 'CursNameController@addtask')->name('addtask');
+    Route::post('/admin/editstudents', 'MainController@store')->name('adduser');
+    Route::post('/admin/course', 'CursNameController@store')->name('addcursname');
+    Route::post('admin/news', 'NewsController@adminstore')->name('addpost');
+    Route::get('/admin/editcourse','MenuController@aeditcoursmenu');
+    Route::get('admin/course','MenuController@acoursemenu');
 });
 
 

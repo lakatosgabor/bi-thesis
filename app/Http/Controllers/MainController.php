@@ -9,6 +9,7 @@ use Validator;
 use Auth;
 use App\Documents;
 use App\Users;
+use App\CursName;
 
 class MainController extends Controller
 {

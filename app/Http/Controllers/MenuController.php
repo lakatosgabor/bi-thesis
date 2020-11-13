@@ -9,6 +9,7 @@ use App\Documents;
 use App\News;
 use App\Users;
 use App\Chat;
+use App\CursName;
 
 class MenuController extends Controller{
 
@@ -22,8 +23,13 @@ class MenuController extends Controller{
         return view('news')->with('news', $news);
     }
 
+    function aeditcoursmenu(){
+        return view('admin.aeditcours');
+    }
+
     function coursemenu(){
-        return view('course');
+        $name = CursName::orderBy('name', 'asc')->get();
+        return view('admin/acourse')->with('name', $name); 
     }
 
     function chatmenu(){

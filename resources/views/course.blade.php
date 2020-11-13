@@ -47,51 +47,6 @@
                             <span class="font-bold text-title">Belépés</span><br>
                             <span class="font-bold text-title">Szerkesztés</span>
                         </div>
-                        <div class="card_inner1">
-                            <img class="logo" src="{{asset('fotos/ik-logo.png')}}">
-                            <p class="text-primary-p">Teszt 1 kurzus</p>
-                            <span class="font-bold text-title">Belépés</span><br>
-                            <span class="font-bold text-title">Szerkesztés</span>
-                        </div>
-                        <div class="card_inner1">
-                            <img class="logo" src="{{asset('fotos/ik-logo.png')}}">
-                            <p class="text-primary-p">Teszt 1 kurzus</p>
-                            <span class="font-bold text-title">Belépés</span><br>
-                            <span class="font-bold text-title">Szerkesztés</span>
-                        </div>
-                        <div class="card_inner1">
-                            <img class="logo" src="{{asset('fotos/ik-logo.png')}}">
-                            <p class="text-primary-p">Teszt 1 kurzus</p>
-                            <span class="font-bold text-title">Belépés</span><br>
-                            <span class="font-bold text-title">Szerkesztés</span>
-                        </div>
-
-                            <div class="card_inner1">
-                                <i class="fa fa-user-secret fa-2x text-green"></i>
-                                <p class="text-primary-p">Jogosúltság</p>
-                                <span class="font-bold text-title">Oktatói</span>
-                            </div>
-
-                        <div class="card_inner1">
-                            <i class="fa fa-wrench fa-2x text-yellow"></i>
-                            <p class="text-primary-p">Módosítva</p>
-                            <span class="font-bold text-title">{{Auth::user()->updated_at}}</span>
-                        </div>
-                        <div class="card_inner1">
-                            <i class="fa fa-wrench fa-2x text-yellow"></i>
-                            <p class="text-primary-p">Módosítva</p>
-                            <span class="font-bold text-title">{{Auth::user()->updated_at}}</span>
-                        </div>
-                        <div class="card_inner1">
-                            <i class="fa fa-wrench fa-2x text-yellow"></i>
-                            <p class="text-primary-p">Módosítva</p>
-                            <span class="font-bold text-title">{{Auth::user()->updated_at}}</span>
-                        </div>
-                        <div class="card_inner1">
-                            <i class="fa fa-wrench fa-2x text-yellow"></i>
-                            <p class="text-primary-p">Módosítva</p>
-                            <span class="font-bold text-title">{{Auth::user()->updated_at}}</span>
-                        </div>
             </div>
 
         <script>$('#close').click(function(){$('#menu').toggle();});</script>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\News;
 use App\Users;
+use App\CursName;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,8 @@ use App\Users;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 
 Route::get('/', 'MainController@index');
 Route::get('/main', 'MainController@index');
@@ -27,14 +30,31 @@ Route::get('course','MenuController@coursemenu');
 Route::get('chat','MenuController@chatmenu');
 Route::get('warning','MenuController@warningmenu');
 Route::get('asks','MenuController@asksmenu');
+Route::get('/admin/editcourse','MenuController@aeditcoursmenu');
+
 
 Route::post('/news', 'NewsController@store')->name('addpost');
 Route::post('/admin/editstudents', 'MainController@store')->name('adduser');
-
+Route::post('/admin/course', 'CursNameController@store')->name('addcursname');
 Route::post('admin/news', 'NewsController@adminstore')->name('addpost');
-
 Route::post('/chat', 'ChatController@store')->name('addchat');
 
+
+Route::get('/admin/course/{id}', 'CursNameController@show');
+
+
+
+
+
+
+Route::group(['middleware' => ['auth', 'oktato']], function() {
+    Route::get('/admin/course', function(){
+        $name = CursName::orderBy('name', 'asc')->get();
+        return view('admin.acourse')->with('name', $name);
+
+    });
+});
+ 
 
 Route::group(['middleware' => ['auth', 'oktato']], function() {
     Route::get('/admin/editstudents', function(){
@@ -42,8 +62,6 @@ Route::group(['middleware' => ['auth', 'oktato']], function() {
         return view('/admin.editstudents')->with('users', $users);
     });
 });
-
-
 
 Route::group(['middleware' => ['auth', 'oktato']], function() {
     Route::get('/admin/tutorial', function(){
@@ -58,20 +76,12 @@ Route::group(['middleware' => ['auth', 'oktato']], function() {
 });
 
 Route::group(['middleware' => ['auth', 'oktato']], function() {
-    Route::get('/admin/course', function(){
-        return view('admin.acourse');
-    });
-});
-
-Route::group(['middleware' => ['auth', 'oktato']], function() {
     Route::get('/admin/news', function(){
         $news = News::orderBy('created_at', 'desc')->get();
         return view('admin.anews')->with('news', $news);
     });
 
 });
-
-
 
 Route::group(['middleware' => ['auth', 'oktato']], function() {
     Route::get('/admin/asks', function(){

@@ -40,62 +40,25 @@
         </div>
             <div class="sajat-feltoltesek">
             <div class="main__title">
-                        <a class="new_course" href="newcourse">ÚJ KURZUS LÉTREHOZÁSA</a>
+                <h1>ÚJ KURZUS LÉTREHOZÁSA</h1>
+                        <form method="post" action="{{ route('addcursname') }}">
+                            {{csrf_field() }} 
+                            <input type="text" name="name" placeholder="Név">
+                            <button id="logb" name="add" type="submit">Hozzáadás</button><br>
+                        </form>
                 </div>
                 <div class="main__title">
                         <h1>KURZUSOK</h1>
                 </div>
+                    @foreach ($name as $n)
                         <div class="card_inner1">
                             <img class="logo" src="{{asset('fotos/ik-logo.png')}}">
-                            <p class="text-primary-p">Teszt 1 kurzus</p>
-                            <span class="font-bold text-title">Belépés</span><br>
-                            <span class="font-bold text-title">Szerkesztés</span>
-                        </div>
-                        <div class="card_inner1">
-                            <img class="logo" src="{{asset('fotos/ik-logo.png')}}">
-                            <p class="text-primary-p">Teszt 1 kurzus</p>
-                            <span class="font-bold text-title">Belépés</span><br>
-                            <span class="font-bold text-title">Szerkesztés</span>
-                        </div>
-                        <div class="card_inner1">
-                            <img class="logo" src="{{asset('fotos/ik-logo.png')}}">
-                            <p class="text-primary-p">Teszt 1 kurzus</p>
-                            <span class="font-bold text-title">Belépés</span><br>
-                            <span class="font-bold text-title">Szerkesztés</span>
-                        </div>
-                        <div class="card_inner1">
-                            <img class="logo" src="{{asset('fotos/ik-logo.png')}}">
-                            <p class="text-primary-p">Teszt 1 kurzus</p>
-                            <span class="font-bold text-title">Belépés</span><br>
-                            <span class="font-bold text-title">Szerkesztés</span>
-                        </div>
+                            <p class="text-primary-p">{{ $n->name }}<br><a href="/admin/course/{{ $n->cid }}"><span>Szerkesztés</span></a></p>
+                            
 
-                            <div class="card_inner1">
-                                <i class="fa fa-user-secret fa-2x text-green"></i>
-                                <p class="text-primary-p">Jogosúltság</p>
-                                <span class="font-bold text-title">Oktatói</span>
-                            </div>
+                        </div>
+                    @endforeach
 
-                        <div class="card_inner1">
-                            <i class="fa fa-wrench fa-2x text-yellow"></i>
-                            <p class="text-primary-p">Módosítva</p>
-                            <span class="font-bold text-title">{{Auth::user()->updated_at}}</span>
-                        </div>
-                        <div class="card_inner1">
-                            <i class="fa fa-wrench fa-2x text-yellow"></i>
-                            <p class="text-primary-p">Módosítva</p>
-                            <span class="font-bold text-title">{{Auth::user()->updated_at}}</span>
-                        </div>
-                        <div class="card_inner1">
-                            <i class="fa fa-wrench fa-2x text-yellow"></i>
-                            <p class="text-primary-p">Módosítva</p>
-                            <span class="font-bold text-title">{{Auth::user()->updated_at}}</span>
-                        </div>
-                        <div class="card_inner1">
-                            <i class="fa fa-wrench fa-2x text-yellow"></i>
-                            <p class="text-primary-p">Módosítva</p>
-                            <span class="font-bold text-title">{{Auth::user()->updated_at}}</span>
-                        </div>
             </div>
 
 

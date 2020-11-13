@@ -8,6 +8,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\NewCourse;
 
 class CursNameController extends Controller
 {
@@ -43,12 +44,39 @@ class CursNameController extends Controller
 
     }
 
-    public function show($table_name){
-        $users = DB::table($table_name)->select('*')->get();
-        echo $users;
+    public function show(){
+
         return view('admin.aeditcours');
         
+    }
+
+    public function addtask(Request $request){
+
         
 
+        $model_name = 'NewCourse';          
+        Artisan::call('make:model',['name'=>$model_name]);
+
+        $task = new NewCourse();
+        if ($request->input('task')){
+            $task->text = $request->input('task');
+            $file = $request->file('file');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('uploads/tasks', $filename);
+            $task->file = $filename;
+
+
+            $task->save();
+            $task = CursName::orderBy('id', 'asc')->get();   
+
+        }
+        else {
+            echo "Hiba";
+        }
+
+
+
+        
     }
 }

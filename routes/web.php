@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\News;
 use App\Users;
 use App\CursName;
+use App\NewCourse;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,9 +41,12 @@ Route::post('admin/news', 'NewsController@adminstore')->name('addpost');
 Route::post('/chat', 'ChatController@store')->name('addchat');
 
 
-Route::get('/admin/course/{id}', 'CursNameController@show');
 
 
+Route::group(['middleware' => ['auth', 'oktato']], function() {
+    Route::get('/admin/course/{id}', 'CursNameController@show');
+    Route::get('/admin/course/{id}', 'CursNameController@addtask')->name('addtask');
+});
 
 
 

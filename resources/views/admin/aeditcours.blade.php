@@ -8,13 +8,11 @@
 </head>
 <body>
 
-    <form action="">
-
-
-
-        <input type="text">
-        <input type="text">
-        <input type="file" name="" id="">
+    <form action="{{ route('addtask') }}" method="POST" enctype="multipart/form-data" >
+    {{csrf_field() }}
+        
+        Feladat: <input type="text" name="task">
+        Fájl: <input type="file" name="file" id="file">
         <input type="submit" value="Küldes">    
     </form>
 </body>

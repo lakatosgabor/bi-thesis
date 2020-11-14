@@ -21,16 +21,6 @@ class CursNameController extends Controller
             $name->cid = Str::snake($table_name);
             $name->save();
             $name = CursName::orderBy('name', 'asc')->get();
-
-
-            $model_name = 'NewCourse';          
-            Artisan::call('make:model',['name'=>$model_name]);
-            Schema::create(Str::snake($table_name), function (Blueprint $table) {
-                $table->increments('id');
-                $table->string('text');
-                $table->string('file');
-                $table->timestamps();
-            });
             
             return redirect()->back();
 
@@ -44,9 +34,30 @@ class CursNameController extends Controller
 
     }
 
-    public function show(){
+    public function show($name){
+        
+        return view('admin.aeditcours')->with('name', $name);
+    }
 
-        return view('admin.aeditcours');
+    public function edit(Request $request){
+
+        $cours = new NewCourse();
+        if ($request->input('task')){
+            $cours->text = $request->input('task');
+            $cours->curs = $request->input('table');;
+            $file = $request->file('file');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('uploads/files', $filename);
+            $cours->file = $filename;
+            $cours->save();
+            echo ('Siekr');
+
+    }
+
+    else{
+        echo ("Hiányzó érték!");
+    }
         
     }
 

@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Http\Controllers\CursNameController;
 use Illuminate\Support\Facades\Route;
 use App\News;
 use App\Users;
@@ -38,12 +38,20 @@ Route::post('/chat', 'ChatController@store')->name('addchat');
 
 
 Route::group(['middleware' => ['auth', 'oktato']], function() {
+    
+    
+
     Route::get('/admin/course/{id}', 'CursNameController@show');
+    Route::post('/addtask', 'CursNameController@edit');
+    
+
+
     Route::post('/admin/editstudents', 'MainController@store')->name('adduser');
     Route::post('/admin/course', 'CursNameController@store')->name('addcursname');
     Route::post('admin/news', 'NewsController@adminstore')->name('addpost');
     Route::get('/admin/editcourse','MenuController@aeditcoursmenu');
     Route::get('admin/course','MenuController@acoursemenu');
+    
 });
 
 

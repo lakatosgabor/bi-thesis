@@ -10,7 +10,7 @@ class NewsController extends Controller
     public function store(Request $request ){
 
         $news = new News();
-            if ($request->input('post') and $request->file('image')){
+            if ($request->input('task') and $request->file('image')){
             $news->name = $request->input('name');
             $news->post = $request->input('post');
             $file = $request->file('image');

@@ -7,7 +7,7 @@ use App\Http\Controllers\CursNameController;
 
 class NewCourse extends Model
 {
-    public $table = "webfejlesztes";
+    public $table = "task";
     protected $fillabe = ['curs', 'text', 'file'];
 
 }

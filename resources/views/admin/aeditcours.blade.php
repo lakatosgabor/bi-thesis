@@ -11,11 +11,12 @@
     <form method="post" action="{{ url('addtask' )}}"  enctype="multipart/form-data" >
     {{csrf_field() }}
         
-            <input type="text" name="table" hidden value="{{ $name }}">
+        <input type="text" name="table" hidden value="{{ $name }}">
         
         Feladat: <input type="text" name="task">
         Fájl: <input type="file" name="file" id="file">
-        <input type="submit" value="Küldes">    
+        <input type="submit" value="Küldes">
+        
     </form>
 </body>
 </html>

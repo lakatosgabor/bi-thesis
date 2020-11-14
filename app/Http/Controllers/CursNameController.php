@@ -35,7 +35,7 @@ class CursNameController extends Controller
     }
 
     public function show($name){
-        
+        print $name;
         return view('admin.aeditcours')->with('name', $name);
     }
 
@@ -51,7 +51,13 @@ class CursNameController extends Controller
             $file->move('uploads/files', $filename);
             $cours->file = $filename;
             $cours->save();
-            echo ('Siekr');
+
+            $cours = NewCourse::orderBy('created_at', 'asc')->get();
+            return view('admin.aeditcours')->with('cours', $cours);
+            
+            
+
+            
 
     }
 

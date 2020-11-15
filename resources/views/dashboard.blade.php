@@ -46,7 +46,9 @@
                         <a class="fa fa-sign-out" aria-hidden="true" href="{{url('/main/logout')}}" style="color: red;  text-decoration: none;">Kijelentkezés</a>
                         <form method="post" action="{{ url('/newpassword' )}}">
                             {{csrf_field() }}  
-                            Jelszó módosítása: <input type="text" name="password" placeholder="Új jelszó">
+                            Jelszó módosítása: <input type="password" name="password" placeholder="Új jelszó">
+                            <input type="password" name="password2" placeholder="Új jelszó ismét">
+                            <input type="text" name="name" value="{{Auth::user()->name }}" hidden>
                             <button id="logb" name="add" type="submit">Módosít</button><br>
                         </form>
                     </div>

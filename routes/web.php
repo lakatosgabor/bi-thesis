@@ -36,6 +36,8 @@ Route::post('/chat', 'ChatController@store')->name('addchat');
 Route::get('/course', 'CursNameController@studentshow');
 Route::get('/showcourse/{id}', 'CursNameController@taskshow');
 
+Route::post('newpassword', 'NewPasswordController@newpassword');
+
 
 Route::group(['middleware' => ['auth', 'oktato']], function() {
     Route::get('/admin/course/{id}', 'CursNameController@show');

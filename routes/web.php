@@ -27,17 +27,14 @@ Route::get('/tutorial', 'MainController@successlogin');
 Route::get('main/logout', 'MainController@logout');
 Route::get('dashboard','MenuController@dashboardmenu');
 Route::get('news','MenuController@newsmenu');
-Route::get('course','MenuController@coursemenu');
+Route::get('/course','MenuController@coursemenu');
 Route::get('chat','MenuController@chatmenu');
 Route::get('warning','MenuController@warningmenu');
 Route::get('asks','MenuController@asksmenu');
 Route::post('/news', 'NewsController@store')->name('addpost');
 Route::post('/chat', 'ChatController@store')->name('addchat');
-
 Route::get('/course', 'CursNameController@studentshow');
-
-
-
+Route::get('/showcourse/{id}', 'CursNameController@taskshow');
 
 
 Route::group(['middleware' => ['auth', 'oktato']], function() {

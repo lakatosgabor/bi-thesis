@@ -42,12 +42,22 @@ class CursNameController extends Controller
         return view('admin.aeditcours', [ 'a'=>$a ])->with('name', $name);
     }
 
-    public function studentshow($name){
+    public function studentshow(){
         
-        $a = DB::table('task')->where('curs',$name)->get();
+        $a = DB::table('cursname')->get();
         
         return view('course', [ 'a'=>$a ]);
     }
+
+
+    public function taskshow($name){
+        
+        $a = DB::table('task')->where('curs',$name)->get();
+        
+        return view('showcourse', [ 'a'=>$a ])->with('name', $name);
+    }
+
+
 
     public function edit(Request $request, NewCourse $name){
 

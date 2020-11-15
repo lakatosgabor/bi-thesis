@@ -28,7 +28,8 @@ class MenuController extends Controller{
     }
 
     function coursemenu(){
-        return view('course');
+        $name = CursName::orderBy('name', 'asc')->get();
+        return view('course')->with('name', $name); 
     }
 
     function acoursemenu(){

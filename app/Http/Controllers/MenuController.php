@@ -42,6 +42,11 @@ class MenuController extends Controller{
         return view('chat')->with('msg', $msg); 
     }
 
+    function adminchatmenu(){
+        $msg = Chat::orderBy('created_at', 'asc')->get();
+        return view('admin.achat')->with('msg', $msg); 
+    }
+
     function warningmenu(){
         return view('warning');
     }

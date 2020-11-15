@@ -45,7 +45,8 @@ Route::group(['middleware' => ['auth', 'oktato']], function() {
     Route::post('admin/news', 'NewsController@adminstore')->name('addpost');
     Route::get('/admin/editcourse','MenuController@aeditcoursmenu');
     Route::get('admin/course','MenuController@acoursemenu');
-    
+    Route::get('admin/chat','MenuController@adminchatmenu');
+    Route::post('admin/chat', 'ChatController@adminstore')->name('addchat');
 });
 
 
@@ -70,12 +71,6 @@ Route::group(['middleware' => ['auth', 'oktato']], function() {
 Route::group(['middleware' => ['auth', 'oktato']], function() {
     Route::get('/admin/tutorial', function(){
         return view('admin.tutorial');
-    });
-});
-
-Route::group(['middleware' => ['auth', 'oktato']], function() {
-    Route::get('/admin/chat', function(){
-        return view('admin.achat');
     });
 });
 

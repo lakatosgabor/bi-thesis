@@ -217,12 +217,12 @@ form{
     height: 450px;
     width: 900px;
     overflow-x: hidden;
+    overflow-y: auto;
     border: solid;
     border-color:cadetblue;
     border-width: 1px;
     padding: 10px;
     z-index: 1;
-    overflow-x: hidden;
     margin: 0 auto;
     background: white;
 

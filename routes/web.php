@@ -34,18 +34,15 @@ Route::get('asks','MenuController@asksmenu');
 Route::post('/news', 'NewsController@store')->name('addpost');
 Route::post('/chat', 'ChatController@store')->name('addchat');
 
+Route::get('/course', 'CursNameController@studentshow');
+
+
 
 
 
 Route::group(['middleware' => ['auth', 'oktato']], function() {
-    
-    
-
     Route::get('/admin/course/{id}', 'CursNameController@show');
     Route::post('/addtask', 'CursNameController@edit');
-    
-
-
     Route::post('/admin/editstudents', 'MainController@store')->name('adduser');
     Route::post('/admin/course', 'CursNameController@store')->name('addcursname');
     Route::post('admin/news', 'NewsController@adminstore')->name('addpost');

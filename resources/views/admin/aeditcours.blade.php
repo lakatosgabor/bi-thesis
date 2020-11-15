@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+
     <form method="post" action="{{ url('addtask' )}}"  enctype="multipart/form-data" >
     {{csrf_field() }}
         
@@ -18,5 +18,16 @@
         <input type="submit" value="Küldes">
         
     </form>
+
+    <table stlye=" border: 4px; ">
+        <tr>
+            @foreach($a as $i)
+                <tr><td>{{$i->curs}}</td></tr>
+                <tr><td>{{$i->text}}</td></tr>
+                <tr><td>{{$i->file}}</td></tr>
+                <tr><td>{{$i->created_at}}</td></tr>
+            @endforeach
+        </tr>
+    </table>
 </body>
 </html>

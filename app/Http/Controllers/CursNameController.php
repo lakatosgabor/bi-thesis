@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\NewCourse;
 
+
 class CursNameController extends Controller
 {
     public function store(Request $request){
@@ -35,11 +36,20 @@ class CursNameController extends Controller
     }
 
     public function show($name){
-        print $name;
-        return view('admin.aeditcours')->with('name', $name);
+        
+        $a = DB::table('task')->where('curs',$name)->get();
+        
+        return view('admin.aeditcours', [ 'a'=>$a ])->with('name', $name);
     }
 
-    public function edit(Request $request){
+    public function studentshow($name){
+        
+        $a = DB::table('task')->where('curs',$name)->get();
+        
+        return view('course', [ 'a'=>$a ]);
+    }
+
+    public function edit(Request $request, NewCourse $name){
 
         $cours = new NewCourse();
         if ($request->input('task')){
@@ -53,12 +63,7 @@ class CursNameController extends Controller
             $cours->save();
 
             $cours = NewCourse::orderBy('created_at', 'asc')->get();
-            return view('admin.aeditcours')->with('cours', $cours);
-            
-            
-
-            
-
+            return back()->with('cours', $cours); 
     }
 
     else{

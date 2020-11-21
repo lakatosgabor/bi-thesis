@@ -8,4 +8,8 @@ szoftverfejlesztési módszereket alkalmazva, gyakorlati feladatokat végrehajtv
 olyan elearning típusú alkalmazás létrehozása, majd később üzemeltetése, amely
 hasznos szerepet tölt be az egyetemi oktatás során.</p>
 
-<img src="ora2.png" alt="Okos óra">
+
+bi-thesis/public/fotos/
+
+
+<img src="bi-thesis/public/fotos/5.jpg" alt="Login">

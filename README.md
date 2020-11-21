@@ -12,4 +12,4 @@ hasznos szerepet tölt be az egyetemi oktatás során.</p>
 bi-thesis/public/fotos/
 
 
-<img src="/public/fotos/5.jpg" alt="Login">
+<img src="/public/fotos/5.png" alt="Login">

@@ -10,7 +10,7 @@ hasznos szerepet tölt be az egyetemi oktatás során.</p>
 
 
 
-<img src="/public/fotos/5.png" alt="">
+<img src="bi-thesis/public/fotos/5.png" alt="">
 
 <img src="/public/fotos/1.png" alt="">
 

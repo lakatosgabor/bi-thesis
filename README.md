@@ -10,20 +10,20 @@ hasznos szerepet tölt be az egyetemi oktatás során.</p>
 
 
 
-<img src="/public/fotos/5.png" alt="Login">
+<img src="/public/fotos/5.png" alt="">
 
-<img src="/public/fotos/1.png" alt="Login">
+<img src="/public/fotos/1.png" alt="">
 
-<img src="/public/fotos/2.png" alt="Login">
+<img src="/public/fotos/2.png" alt="">
 
-<img src="/public/fotos/3.png" alt="Login">
+<img src="/public/fotos/3.png" alt="">
 
-<img src="/public/fotos/4.png" alt="Login">
+<img src="/public/fotos/4.png" alt="">
 
-<img src="/public/fotos/6.png" alt="Login">
+<img src="/public/fotos/6.png" alt="">
 
-<img src="/public/fotos/7.png" alt="Login">
+<img src="/public/fotos/7.png" alt="">
 
-<img src="/public/fotos/8.png" alt="Login">
+<img src="/public/fotos/8.png" alt="">
 
-<img src="/public/fotos/9.png" alt="Login">
+<img src="/public/fotos/9.png" alt="">

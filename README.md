@@ -7,3 +7,5 @@ módszertanokat (SCRUM) alkalmazni. A szakdolgozat célja, hogy az elméleti
 szoftverfejlesztési módszereket alkalmazva, gyakorlati feladatokat végrehajtva, egy
 olyan elearning típusú alkalmazás létrehozása, majd később üzemeltetése, amely
 hasznos szerepet tölt be az egyetemi oktatás során.</p>
+
+<img src="ora2.png" alt="Okos óra">
